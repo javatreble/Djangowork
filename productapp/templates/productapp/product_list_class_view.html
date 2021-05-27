@@ -1,0 +1,30 @@
+{% extends '../base.html' %}
+
+{% block title %}Product List{% endblock title %}
+
+{%block content %}
+
+{% if products %}
+
+<table>
+
+    {% for product in products %}
+
+        <tr>
+
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td> {{ product.name }}</a></td>
+            <td> Edit </a></td>
+
+        </tr>
+
+        {% empty %}
+    {% endfor %}
+
+</table>
+
+{% else %}
+ <p>No blogs are available.</p>
+{% endif %}
+
+{% endblock content %}
