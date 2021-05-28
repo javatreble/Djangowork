@@ -5,8 +5,11 @@
 {% block content %}
     <h1>{{ product.name }}</h1>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    {{ product.quantity }} <br>
-    {{ product.price }} <br>
-    {{ product.description }} <br>
-    {{ product.picture }} <br>
+
+    <b> Product Quantity: </b>  {{ product.quantity }} <br>
+    <b> Product Price: </b> {{ product.price }} <br>
+    <b> Product Description: </b>  {{ product.description }} <br>
+    <b> Product Picture: </b>   <img src={{ product.picture }} alt={{ product.description }}> <br>
+    <b> Product Category: </b>   {{ product.category }}  <br>
+
 {% endblock content %}

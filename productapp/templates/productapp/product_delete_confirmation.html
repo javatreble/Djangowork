@@ -1,0 +1,14 @@
+{% extends '../base.html' %}
+
+{% block title %}Product Delete{% endblock title %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+     <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ product.name }}"?</p>
+        <input type="submit" value="Confirm">
+        <a href="{% url 'productapp:productlist' %}" > Cancel </a>
+    </form>
+{% endblock content %}

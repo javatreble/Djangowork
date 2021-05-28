@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+
+{% block title %}Product List{% endblock title %}
+
+{%block content %}
+
+{% if products %}
+
+<table>
+
+    {% for product in products %}
+
+        <tr>
+
+            <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><a href="{% url 'productapp:productdetail' product.id %}">{{ product.name }}</a></td>
+                <td><a href="{% url 'productapp:productdelete' product.id %}" > Delete </a></td></tr>
+    {% endfor %}
+
+</table>
+
+{% else %}
+ <p>No products are available.</p>
+{% endif %}
+
+{% endblock content %}

@@ -6,25 +6,28 @@
 
 {% if products %}
 
-<table>
 
+<div>
     {% for product in products %}
+    <div>
+            <div>
+                <a href="{% url 'productapp:productdetail' product.id %}">{{ product.category }}</a>
+            </div>
+        <div>
+        <ul>
+            <li>
+                <a href="{% url 'productapp:productdetail' product.id %}">{{ product.name }}</a>
+                <a href="{% url 'productapp:productupdate' product.id %}"> Edit </a>
+                <a href="{% url 'productapp:productdelete' product.id %}"> Delete </a>
+            </li>
+        </ul>
 
-        <tr>
-
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td> {{ product.name }}</a></td>
-            <td> Edit </a></td>
-
-        </tr>
-
-        {% empty %}
+    </div>
     {% endfor %}
-
-</table>
+</div>
 
 {% else %}
- <p>No blogs are available.</p>
+ <p>No products are available.</p>
 {% endif %}
 
 {% endblock content %}
